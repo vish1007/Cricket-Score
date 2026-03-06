@@ -9,7 +9,9 @@ function startConnect(_topic) {
 	topic = _topic ?? "" + parseInt(Math.random() * 1000000);
 
 	let seralizedLink =
-		document.location.origin + "/watch.html?matchCode=" + topic;
+	window.location.origin +
+	window.location.pathname.replace("index.html","") +
+	"watch.html?matchCode=" + topic;
 	seralizedLink = encodeURI(seralizedLink);
 	document.getElementById("shareModalBody").innerHTML =
 		"<h4>Share this code:" +
