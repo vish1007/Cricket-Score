@@ -56,8 +56,8 @@ function startConnect(_topic) {
 function onConnect() {
 	document.getElementById("messages").innerHTML +=
 		"<span> Subscribing to topic " + topic + "</span><br>";
-
-	client.subscribe("matchCodeWatch" + topic + "origin");
+i
+	client.subscribe("matchCodeWatch" + topic);
 }
 
 function onConnectionLost(responseObject) {
