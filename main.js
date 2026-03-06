@@ -56,8 +56,25 @@ function init() {
 }
 
 function shareModeStart() {
-	isShareMode = true;
-	startConnect();
+
+    isShareMode = true;
+
+    let topic = "" + parseInt(Math.random() * 1000000);
+
+    startConnect(topic);
+
+    let watchLink = window.location.origin +
+        window.location.pathname.replace("index.html", "") +
+        "watch.html?matchCode=" + topic;
+
+    // copy link
+    navigator.clipboard.writeText(watchLink);
+
+    // open WhatsApp share
+    window.open(
+        "https://wa.me/?text=Watch%20live%20score:%20" + encodeURIComponent(watchLink)
+    );
+
 }
 
 function play_ball(run, score = 1) {

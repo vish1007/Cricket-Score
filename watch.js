@@ -106,7 +106,7 @@ function publishMessage(msg) {
 	// topic = document.getElementById("topic_p").value;
 
 	Message = new Paho.MQTT.Message(msg);
-	Message.destinationName = "matchCodeWatch" + topic + "origin";
+	Message.destinationName = "matchCodeWatch" + topic;
 
 	client.send(Message);
 	document.getElementById("messages").innerHTML +=
